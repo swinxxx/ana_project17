@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xl%4=sjh@+hx7bxnil%(u^z2tzbg1boacl(hawc0#ky=z^*zoy'
+SECRET_KEY = 's+f*ihe3ss@d9yxc58yi1@ew$+(cmfc&7z648bzq12m=#cz@lo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'sinlog',
-    'rest_framework.authtoken',
     'ana',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +86,6 @@ DATABASES = {
         'PORT': '',
         }
 }
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -97,10 +95,10 @@ REST_FRAMEWORK = {
     )
 }
 
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
-AUTH_USER_MODEL='sinlog.DetailsModel'
-SESSION_SAVE_EVERY_REQUEST = True
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -139,4 +137,4 @@ STATIC_URL = '/static/'
 try:
     from djanglog.local_settings import *
 except:
-    print ("No setinfs there")
+    print ("No setings there")
