@@ -1,15 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
+from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 import csv
 import os
 from rest_framework.response import Response
+from django.http import JsonResponse
 from .models import TweetModel
 from .Serializers import TweetSerializer
 
 
 class DetailList(APIView):
     permission_classes = (AllowAny,)
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'base.html'
 
     def get(self, request, format=None):
         path= os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ana/all.csv')
@@ -27,7 +31,14 @@ class DetailList(APIView):
                     serializer.save()
         tweet_data = TweetModel.objects.all()
         serializer = TweetSerializer(tweet_data, many=True)
-        return Response(serializer.data)
+        mydict = [{}]
+        for element in serializer.data:
+            var={}
+            for key, val in element.items():
+                var[key] = val
+            mydict.append(var)
+        res= {'data': mydict}
+        return Response(res)
 
 
 class CustomList(APIView):

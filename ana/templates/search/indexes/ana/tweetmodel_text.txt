@@ -1,0 +1,4 @@
+{% load rest_framework %}
+{{object.date}}
+{{object.tweet}}
+{{object.place}}
