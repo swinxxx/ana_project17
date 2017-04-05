@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            height: 50px;
+            vertical-align: bottom;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+</style>
+    <title>To do or not to do</title>
+</head>
+<body>
+    <h1>EXTRACTED TWEETS</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="abc">
+        {% load rest_framework %}
+        {% load static %}
+        {% csrf_token %}
+        <table style="width:100%">
+            <tr>
+                <th>DATE</th>
+                <th>PLACE</th>
+                <th>TWEET</th>
+            </tr>
+            {% for var in data %}
+                <tr>
+                    <td> {{var.date}} </td>
+                    <td> {{var.place}} </td>
+                    <td> {{var.tweet}} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
