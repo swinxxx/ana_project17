@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TweetModel
+from .models import TweetModel, FinalModel
 
 
 class TweetSerializer(serializers.ModelSerializer):
@@ -10,3 +10,8 @@ class TweetSerializer(serializers.ModelSerializer):
 
 
 
+class FinalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FinalModel
+        fields = ('tweet', 'nature', 'disease', 'place')
+        print('HereSerial')
