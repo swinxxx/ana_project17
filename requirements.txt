@@ -3,7 +3,7 @@ appdirs==1.4.0
 billiard==3.5.0.2
 celery==4.0.2
 certifi==2017.1.23
-Django==1.10.5
+Django==2.2.24
 django-filter==1.0.1
 django-haystack==2.6.0
 django-rest-swagger==0.3.8
