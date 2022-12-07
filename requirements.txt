@@ -2,7 +2,7 @@ amqp==2.1.4
 appdirs==1.4.0
 billiard==3.5.0.2
 celery==4.0.2
-certifi==2017.1.23
+certifi==2022.12.7
 Django==1.10.5
 django-filter==1.0.1
 django-haystack==2.6.0
